@@ -1,4 +1,4 @@
-# Nodejs Rest API
+# Nodejs Rest API [![CI Pipeline](https://github.com/Codexter-Lab/nodejs-rest-api/actions/workflows/ci.yaml/badge.svg)](https://github.com/Codexter-Lab/nodejs-rest-api/actions/workflows/ci.yaml)
 
 This is a production-grade backend service that provides APIs for user and product management. The application is built using Node.js, Express, and PostgreSQL. It also includes a CI/CD pipeline using GitHub Actions to run unit tests, build Docker images, and push them to DockerHub.
 
@@ -32,8 +32,8 @@ Before you begin, ensure you have the following installed:
 1. **Clone the repository:**
 
 ```bash
-git clone https://github.com/yourusername/backend-service.git
-cd backend-service
+git clone https://github.com/Codexter-Lab/nodejs-rest-api
+cd nodejs-rest-api
 ```
 
 2. **Install dependencies:**

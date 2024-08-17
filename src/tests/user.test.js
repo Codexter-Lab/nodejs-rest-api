@@ -1,10 +1,11 @@
 const request = require('supertest');
-const app = require('../index');  // Assuming your express app is exported from index.js
+const app = require('../index'); // Ensure this is at the top of your file
 
 describe('User API', () => {
+    // Example test case: Ensure the user creation works
     it('should create a new user', async () => {
         const response = await request(app)
-            .post('/users')
+            .post('/api/users')
             .send({
                 name: 'John Doe',
                 email: 'john@example.com',
@@ -15,9 +16,15 @@ describe('User API', () => {
         expect(response.body).toHaveProperty('id');
     });
 
+    // Example test case: Ensure fetching users works
     it('should fetch all users', async () => {
-        const response = await request(app).get('/users');
+        const response = await request(app).get('/api/users');
         expect(response.statusCode).toBe(200);
         expect(response.body).toBeInstanceOf(Array);
     });
+});
+
+// Ensure the test cases are isolated and do not interfere with each other
+afterAll(async () => {
+    await new Promise((resolve) => setTimeout(() => resolve(), 500)); // Avoid jest open handle error
 });

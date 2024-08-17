@@ -5,7 +5,7 @@ describe('User API', () => {
     // Example test case: Ensure the user creation works
     it('should create a new user', async () => {
         const response = await request(app)
-            .post('/api/users')
+            .post('/users')
             .send({
                 name: 'John Doe',
                 email: 'john@example.com',
@@ -18,7 +18,7 @@ describe('User API', () => {
 
     // Example test case: Ensure fetching users works
     it('should fetch all users', async () => {
-        const response = await request(app).get('/api/users');
+        const response = await request(app).get('/users');
         expect(response.statusCode).toBe(200);
         expect(response.body).toBeInstanceOf(Array);
     });

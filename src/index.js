@@ -1,6 +1,7 @@
 const express = require('express');
 const dotenv = require('dotenv');
 const userRoutes = require('./routes/userRoutes');
+const productRoutes = require('./routes/productRoutes');
 const sequelize = require('./config/db');
 
 dotenv.config();
@@ -10,11 +11,12 @@ app.use(express.json());
 
 // Test route
 app.get('/', (req, res) => {
-    res.send('User Service is running');
+    res.send('Application is running');
 });
 
 // User routes
-app.use('/api', userRoutes);
+app.use('/users', userRoutes);
+app.use('/products', productRoutes);
 
 const PORT = process.env.PORT || 3000;
 

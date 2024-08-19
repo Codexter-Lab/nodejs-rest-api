@@ -18,7 +18,7 @@ app.get('/', (req, res) => {
 app.use('/users', userRoutes);
 app.use('/products', productRoutes);
 
-const PORT = process.env.PORT || 3000;
+const PORT = process.env.PORT;
 
 sequelize.sync().then(() => {
     app.listen(PORT, () => console.log(`Server running on port ${PORT}`));

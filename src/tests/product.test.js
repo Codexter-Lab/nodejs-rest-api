@@ -7,6 +7,7 @@ describe('Product API', () => {
             .post('/products')
             .send({
                 name: 'Test Product',
+                description: 'Testing the product',
                 price: 99.99,
                 stock: 10
             });
@@ -20,4 +21,8 @@ describe('Product API', () => {
         expect(response.statusCode).toBe(200);
         expect(response.body).toBeInstanceOf(Array);
     });
+});
+
+afterAll(async () => {
+    await new Promise((resolve) => setTimeout(() => resolve(), 500));
 });

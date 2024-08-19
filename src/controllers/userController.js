@@ -11,6 +11,16 @@ exports.createUser = async (req, res) => {
     }
 };
 
+// Fetch all users
+exports.getAllUsers = async (req, res) => {
+    try {
+        const users = await User.findAll();
+        res.json(users);
+    } catch (error) {
+        res.status(500).json({ error: error.message });
+    }
+};
+
 // Get user by ID
 exports.getUserById = async (req, res) => {
     try {

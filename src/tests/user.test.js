@@ -23,5 +23,5 @@ describe('User API', () => {
 });
 
 afterAll(async () => {
-    await new Promise((resolve) => setTimeout(() => resolve(), 500)); // Avoid jest open handle error
+    await new Promise((resolve) => setTimeout(() => resolve(), 500));
 });

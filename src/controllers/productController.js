@@ -10,6 +10,16 @@ exports.createProduct = async (req, res) => {
     }
 };
 
+exports.getAllProduct = async (req, res) => {
+    try {
+        const product = await Product.findAll();
+        res.json(product);
+    } catch (error) {
+        res.status(500).json({ error: error.message });
+    }
+};
+
+
 exports.getProductById = async (req, res) => {
     try {
         const product = await Product.findByPk(req.params.id);
